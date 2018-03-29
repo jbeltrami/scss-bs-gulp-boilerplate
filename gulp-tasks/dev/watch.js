@@ -4,5 +4,5 @@ module.exports = gulp => {
   });
 
   gulp.watch(global.SOURCES_BASE_PATH + '/assets/styles/**/*.scss', ['styles:build']);
-  gulp.watch(global.SOURCES_BASE_PATH + '/**/*.html', ['dev:reload']);
+  gulp.watch(global.SOURCES_BASE_PATH + '/**/*.njk', ['dev:reload']);
 };
