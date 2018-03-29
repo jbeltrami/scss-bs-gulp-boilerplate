@@ -1,0 +1,20 @@
+@import 'config';
+@import 'corners';
+@import 'font-awesome';
+@import 'fonts';
+@import 'scale';
+@import 'reset';
+
+body {
+  background: $colour-back;
+  color: $colour-fore;
+}
+
+header,
+footer {
+  list-style: none;
+
+  li {
+    display: inline;
+  }
+}

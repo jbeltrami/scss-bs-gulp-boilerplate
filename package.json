@@ -1,0 +1,31 @@
+{
+  "name": "gulp-nunjucks-boilerplate",
+  "version": "0.0.1",
+  "description": "Gulp tasks for SASS and Nunjucks",
+  "main": "dist/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:mryellow/gulp-nunjucks-boilerplate.git"
+  },
+  "author": "Mr-Yellow",
+  "license": "MIT",
+  "homepage": "https://github.com/mryellow/gulp-nunjucks-boilerplate",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-bump": "^2.7.0",
+    "gulp-data": "^1.2.1",
+    "gulp-git": "^2.4.1",
+    "gulp-nunjucks-render": "^2.2.1",
+    "gulp-require-tasks": "^1.2.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "modularscale-sass": "^3.0.3",
+    "vinyl-paths": "^2.1.0"
+  }
+}
