@@ -1,1 +1,1 @@
-$('h1').css('color', 'blue')
+$('h1').css('color', 'green')
