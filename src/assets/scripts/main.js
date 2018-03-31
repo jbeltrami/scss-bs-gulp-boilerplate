@@ -1,1 +1,1 @@
-console.log('hello world')
+const custom = require('./custom-js/custom.js')
