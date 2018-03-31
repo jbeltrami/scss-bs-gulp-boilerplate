@@ -22,14 +22,41 @@ const config = {
 
 module.exports = gulp =>
   gulp.src(global.SOURCES_BASE_PATH + config.js.sr)
-  .transform(coffeeify)      //  Chain transformations: First, coffeeify . . .
-  .transform(babelify, { presets : [ 'es2015' ] });  // Then, babelify, with ES2015 preset
+  .transform(coffeeify)
+  .transform(babelify, { presets : [ 'es2015' ] });
     browserify(config.js.src)
-    .bundle()                                                        // Start bundle
-    .pipe(source(config.js.src))                        // Entry point
-    .pipe(buffer())                                               // Convert to gulp pipeline
-    .pipe(rename(config.js.outputFile))          // Rename output from 'main.js' to 'bundle.js'
-    .pipe(sourceMaps.init({ loadMaps : true }))  // Strip inline source maps
-    .pipe(sourceMaps.write(config.js.mapDir))    // Save source maps to their own directory
-    .pipe(gulp.dest(global.BASE_PATH + config.js.outputDir))        // Save 'bundle' to build/
+    .bundle()
+    .pipe(source(config.js.src))
+    .pipe(buffer())
+    .pipe(rename(config.js.outputFile))
+    .pipe(sourceMaps.init({ loadMaps : true }))
+    .pipe(sourceMaps.write(config.js.mapDir))
     .pipe(global.BROWSER_SYNC.stream({ match: '**/*.css' }));
+
+
+    //
+    // function bundle(bundler) {
+    //   bundler
+    //     .bundle()
+    //     .pipe(source(config.js.src))
+    //     .pipe(buffer())
+    //     .pipe(rename(config.js.outputFile))
+    //     .pipe(sourceMaps.init({
+    //       loadMaps: true
+    //     }))
+    //     .pipe(sourceMaps.write(config.js.mapDir))
+    //     .pipe(gulp.dest(config.js.outputDir))
+    //     .pipe(global.BROWSER_SYNC.stream({ match: '**/*.css' }));
+    // }
+    //
+    // var bundler = browserify(config.js.src)
+    //                 .transform(coffeeify)
+    //                 .transform(babelify, {
+    //                   presets: ['es2015']
+    //                 });
+    //
+    //
+    //
+    // module.exports = (gulp, bundler) =>
+    //   gulp.src(global.SOURCES_BASE_PATH + config.js.src)
+    //   .bundle(bundler)
